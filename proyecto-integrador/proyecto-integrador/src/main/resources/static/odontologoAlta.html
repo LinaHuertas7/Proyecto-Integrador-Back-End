@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Clinica Odontologica</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Insertar descripción aquí.">
+
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="icon" type="image/gif" href="/assets/img/animated_favicon1.gif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script type="text/javascript" src="/js/post_odontologo.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <a class="inicio" href="./index.html">Inicio</a>
+        <ul class="categorias">
+            <li><a class="enlace-nav" href="./odontologoAlta.html">Alta odontologos</a></li>
+            <li><a class="enlace-nav" href="./odontologosList.html">Listado odontologos</a></li>
+            <li><a class="enlace-nav" href="./pacienteAlta.html">Alta Pacientes</a></li>
+            <li><a class="enlace-nav" href="./pacientesList.html">Listado Pacientes</a></li>
+            <li><a class="enlace-nav" href="./turnoAlta.html">Alta Turnos</a></li>
+            <li><a class="enlace-nav" href="./turnosList.html">Listado Turnos</a></li>
+        </ul>
+
+        <ul class="items">
+            <li><img src="./img/Vector(1).svg" alt="Perfil" /></li>
+            <li><img src="./img/Vector(2).svg" alt="Compra" /></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+    <div class="row">
+        <form id="add_new_odontologo">
+            <h3>Agregar Odontologo</h3>
+            <div class="form-group">
+                <label class="control-label" for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre"
+                       placeholder="Ingrese el nombre" name="nombre" required></input>
+
+                <label class="control-label" for="apellido">Apellido:</label>
+                <input type="text" class="form-control" id="apellido"
+                       placeholder="Ingrese el apellido" name="apellido" required></input>
+
+                <label class="control-label" for="matricula">Número de matricula:</label>
+                <input type="number" class="form-control" id="matricula"
+                       placeholder="Ingrese el número de matricula" name="matricula" required></input>
+            </div>
+
+            <div class="botones">
+            <button type="reset" class="btn btn-reset" id="btn-reset">Reset</button>
+            <button type="submit" class="btn btn-danger" id="btn-add-new-odontologo">Guardar</button>
+            </div>
+        </form>
+        <div id="response" style="display:none; margin-top:10px">
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

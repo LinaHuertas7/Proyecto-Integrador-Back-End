@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Clinica Odontologica</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/lista.css" />
+  <link rel="stylesheet" href="./css/lista.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/get_paciente.js"></script>
+  <script type="text/javascript" src="/js/put_paciente.js"></script>
+  <script type="text/javascript" src="/js/delete_paciente.js"></script>
+</head>
+<body>
+<header>
+  <nav>
+    <a class="inicio" href="./index.html">Inicio</a>
+    <ul class="categorias">
+      <li><a class="enlace-nav" href="./odontologoAlta.html">Alta odontologos</a></li>
+      <li><a class="enlace-nav" href="./odontologosList.html">Listado odontologos</a></li>
+      <li><a class="enlace-nav" href="./pacienteAlta.html">Alta Pacientes</a></li>
+      <li><a class="enlace-nav" href="./pacientesList.html">Listado Pacientes</a></li>
+      <li><a class="enlace-nav" href="./turnoAlta.html">Alta Turnos</a></li>
+      <li><a class="enlace-nav" href="./turnosList.html">Listado Turnos</a></li>
+    </ul>
+
+    <ul class="items">
+      <li><img src="./img/Vector(1).svg" alt="Perfil" /></li>
+      <li><img src="./img/Vector(2).svg" alt="Compra" /></li>
+    </ul>
+  </nav>
+</header>
+<div class="container">
+  <div id="div_pacientes_table">
+    <h1>Pacientes</h1>
+    <div class="row col-md-6 table-responsive">
+      <table id="pacientesTable" class="table table-striped">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>DNI</th>
+          <th>Calle</th>
+          <th>Numero</th>
+          <th>Localidad</th>
+          <th>Provincia</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div
+            class="col-sm-6"
+            style="
+            display: none;
+            background-color: #e6fffa;
+            padding: 10px;
+            border-radius: 3px;
+          "
+            id="div_pacientes_updating"
+    >
+      <form id="update_paciente_form">
+        <div class="form-group">
+          <label for="id">Id:</label>
+          <input type="text" class="form-control" id="id" readonly />
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="nombre"
+                  id="nombre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido:</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="apellido"
+                  id="apellido"
+          />
+        </div>
+        <div class="form-group">
+          <label for="dni">DNI:</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="dni"
+                  id="dni"
+          />
+        </div>
+        <div class="form-group">
+          <label for="calle">Calle:</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="calle"
+                  id="calle"
+                  readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="numero">Número:</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="número"
+                  id="numero"
+                  readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="localidad">Localidad:</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="localidad"
+                  id="localidad"
+                  readonly
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="provincia">Provincia:</label>
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="provincia"
+                  id="provincia"
+                  readonly
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Modificar</button>
+      </form>
+      <div id="response" style="display: none; margin: 10px"></div>
+    </div>
+  </div>
+  <hr />
+</div>
+</body>
+</html>

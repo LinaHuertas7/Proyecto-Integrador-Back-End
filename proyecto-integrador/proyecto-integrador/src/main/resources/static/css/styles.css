@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,300;0,500;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Work Sans';
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------------nav----------------------------------- */
+
+nav {
+  align-items: center;
+  display: flex;
+  height: 75px;
+  justify-content: space-between;
+}
+
+.lista{
+  display:none;
+}
+
+.inicio{
+  background-color: #009c8c;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0px 35px;
+  padding: 18px 50px;
+  text-decoration: none;
+  transition: all 1.5s;
+}
+
+.inicio:hover{
+  background-color: #4ed7e9;
+}
+
+nav ul {
+  align-content: flex-end;
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin:9px;
+}
+
+.enlace-nav{
+  color: #222222;
+  text-decoration: none;
+  transition: all 3ms;
+}
+
+.enlace-nav:hover{
+  color:#009c8c;
+}
+
+.items {
+  margin-right: 100px;
+}
+
+/* ----------------------------main----------------------------------- */
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/*PRIMERA SECTION*/
+
+.primera {
+  background-image: url("../img/fondoIndex1.jpg");
+  background-size: 95%;
+  display: flex;
+}
+
+
+/*Primera-parte (Div)*/
+.primera-parte {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.primera-parte h2{
+  font-size: 65px;
+  font-family: 'Kaushan Script';
+  font-weight: normal;
+  padding-left: 37px;
+}
+
+.proyect {
+  background-color: #009c8c;
+  color: #ffffff;
+  margin: 10px;
+  padding: 9px 33px;
+  text-align: center;
+  text-decoration: none;
+}
+/*FIN PRIMERA SECTION */
+/* Formulario */
+.row{
+    display: flex;
+    background-color: #efefef;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.row2{
+    display: flex;
+    background-color: #efefef;
+    height: 150vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+form{
+  margin-top: -20px;
+  background-color: #FCFCFC;
+  padding: 17px 50px;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.row h3, .row2 h3{
+  color: #515486;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  background-color: #F6F7F9;
+  border-radius: 12px;
+  border:none;
+  color: #515486;
+  font-size: 13px;
+  line-height: 25px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.botones{
+  display: flex;
+    justify-content: center;
+}
+
+.btn-reset, .btn-danger{
+  margin: 2%;
+  width: 20%;
+}
+
+.btn-reset, .btn-danger{
+  border-radius: 12px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 15px;
+  margin: 15px 0px;
+  padding: 13px 10px;
+  transition: all 1s;
+}
+
+.btn-reset{
+  background-color: #222222;
+}
+
+.btn-danger{
+  background-color: #E51A73;
+  margin-left: 25px;
+}
+
+::placeholder{
+  color: #515486;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+label{
+  color: #2f2f2f;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 2.5em;
+}
+
+.alert-success{
+    color: #155724;
+    background-color: #d4edda;
+    margin-top: -65px;
+    border-color: #c3e6cb;
+    width: 109vh;
+    padding: 13px 67px;
+    border-radius: 20px;
+}
+
+
+/*
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+.alert-dismissible {
+  padding-right: 4rem;
+}
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .75rem 1.25rem;
+  color: inherit;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+}
+button, select {
+  text-transform: none;
+}
+*/
