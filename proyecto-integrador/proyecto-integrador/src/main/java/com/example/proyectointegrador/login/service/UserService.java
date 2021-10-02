@@ -19,6 +19,7 @@ import java.util.Set;
 @Service
 public class UserService implements UserDetailsService {
 
+    //Agregar dependencia
     @Autowired
     IUserRepository userRepository;
 

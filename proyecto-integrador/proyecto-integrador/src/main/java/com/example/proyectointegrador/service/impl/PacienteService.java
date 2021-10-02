@@ -14,6 +14,7 @@ import java.util.*;
 @Service
 public class PacienteService implements IPacienteService {
 
+    //Agregar dependencia
     @Autowired
     IPacienteRepository pacienteRepository;
 
@@ -25,6 +26,7 @@ public class PacienteService implements IPacienteService {
 
     final static Logger logger = Logger.getLogger(PacienteService.class);
 
+    //Metodo para guardar paciente
     @Override
     public void guardarPaciente(PacienteDTO pacienteDTO) {
         domicilioService.guardarDomicilio(pacienteDTO);
@@ -34,6 +36,7 @@ public class PacienteService implements IPacienteService {
         logger.info("El paciente se ha guardado correctamente");
     }
 
+    //Metodo para consultar paciente por ID
     @Override
     public PacienteDTO consultarPaciente(Long id) {
         PacienteDTO pacienteDTO = null;
@@ -46,6 +49,7 @@ public class PacienteService implements IPacienteService {
         return pacienteDTO;
     }
 
+    //Metodo para actualizar paciente
     @Override
     public void actualizarPaciente(PacienteDTO pacienteDTO) {
         if(pacienteDTO.getId() != null) {
@@ -58,12 +62,14 @@ public class PacienteService implements IPacienteService {
         }
     }
 
+    //Metodo para eliminar paciente por ID
     @Override
     public void eliminarPaciente(Long id) {
         pacienteRepository.deleteById(id);
         logger.info("El paciente con id: " + id + " se ha eliminado correctamente.");
     }
 
+    //Metodo para consultar todos los pacientes
     @Override
     public Collection<PacienteDTO> consultarTodos() {
         List<Paciente> pacientes = pacienteRepository.findAll();

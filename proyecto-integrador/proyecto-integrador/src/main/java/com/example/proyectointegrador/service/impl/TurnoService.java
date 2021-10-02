@@ -14,6 +14,7 @@ import java.util.*;
 @Service
 public class TurnoService implements ITurnoService {
 
+    //Agregar dependencia
     @Autowired
     ITurnoRepository turnoRepository;
 
@@ -28,6 +29,7 @@ public class TurnoService implements ITurnoService {
 
     final static Logger logger = Logger.getLogger(TurnoService.class);
 
+    //Controlador de turnos
     private void controladorTurnos(TurnoDTO turnoDTO){
 
         /*OdontologoDTO odontologoEncontrado  = odontologoService.consultarOdontologo(turnoDTO.getOdontologo().getId());
@@ -37,7 +39,6 @@ public class TurnoService implements ITurnoService {
         turnoDTO.setPaciente(pacienteEncontrado);*/
 
         Turno turno = mapper.convertValue(turnoDTO, Turno.class);
-
 
        /* Odontologo odontologo = mapper.convertValue(odontologoEncontrado, Odontologo.class);
         Paciente paciente = mapper.convertValue(pacienteEncontrado, Paciente.class);*/
@@ -49,6 +50,7 @@ public class TurnoService implements ITurnoService {
 
     }
 
+    //Metodo para guardar turno
     @Override
     public void guardarTurno(TurnoDTO turnoDTO) {
         if(pacienteService.consultarPaciente(turnoDTO.getPaciente().getId()) != null
@@ -61,6 +63,7 @@ public class TurnoService implements ITurnoService {
         }
     }
 
+    //Metodo para consultar turno por ID
     @Override
     public TurnoDTO consultarTurno(Long id) {
         TurnoDTO turnoDTO = null;
@@ -73,6 +76,7 @@ public class TurnoService implements ITurnoService {
         return turnoDTO;
     }
 
+    //Metodo para actualizar turno
     @Override
     public void actualizarTurno(TurnoDTO turnoDTO) {
         if(pacienteService.consultarPaciente(turnoDTO.getPaciente().getId()) != null
@@ -88,12 +92,14 @@ public class TurnoService implements ITurnoService {
         }
     }
 
+    //Metodo para eliminar turno por ID
     @Override
     public void eliminarTurno(Long id) {
         turnoRepository.deleteById(id);
         logger.info("El turno con id: " + id + " se ha eliminado correctamente.");
     }
 
+    //Metodo para consultar todos los turnos
     @Override
     public Collection<TurnoDTO> consultarTodos() {
         List<Turno> turnos = turnoRepository.findAll();

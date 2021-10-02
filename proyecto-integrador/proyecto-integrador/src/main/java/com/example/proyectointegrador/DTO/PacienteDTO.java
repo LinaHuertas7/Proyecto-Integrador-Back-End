@@ -9,6 +9,7 @@ import java.util.Date;
 @Getter @Setter
 public class PacienteDTO {
 
+    //Atributos
     private Long id;
     private String nombre;
     private String apellido;
@@ -16,6 +17,7 @@ public class PacienteDTO {
     private Date fechaIngreso;
     private DomicilioDTO domicilio;
 
+    //toString
     @Override
     public String toString() {
         return "PacienteDTO{" +

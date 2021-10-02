@@ -12,20 +12,24 @@ import java.util.Date;
 @Table(name = "turnos")
 public class Turno {
 
+    //Atributos
     @Id
     @GeneratedValue
     private Long id;
 
     private Date fecha;
 
+    //Establecemos la relacion
     @ManyToOne()
     @JoinColumn(name = "id_paciente", nullable = false)
     private Paciente paciente;
 
+    //Establecemos la relacion
     @ManyToOne()
     @JoinColumn(name = "id_odontologo", nullable = false)
     private Odontologo odontologo;
 
+    //Constructores
     public Turno() {
     }
 

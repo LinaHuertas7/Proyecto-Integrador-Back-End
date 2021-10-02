@@ -13,15 +13,18 @@ import java.util.Collection;
 @RequestMapping("/odontologos")
 public class OdontologoController {
 
+    //Agregar la dependencia
     @Autowired
     OdontologoService odontologoService;
 
+    //Guardar Odontologo
     @PostMapping
     public ResponseEntity<?> guardarOdontologo(@RequestBody OdontologoDTO odontologoDTO) {
         odontologoService.guardarOdontologo(odontologoDTO);
         return ResponseEntity.status(HttpStatus.OK).body("Guardado Correctamente");
     }
 
+    //Consultar odontologo por ID
     @GetMapping("/{id}")
     public ResponseEntity<?> consultarOdontologo(@PathVariable Long id) {
         OdontologoDTO odontologoDTO = odontologoService.consultarOdontologo(id);
@@ -33,17 +36,13 @@ public class OdontologoController {
         }
     }
 
-
-    //@GetMapping
-    /*public ResponseEntity<List<Odontologo>> consultarTodos(){
-        return ResponseEntity.ok(odontologoService.buscarTodos());
-    }*/
-
+    //Consultar todos los odontologos
     @GetMapping
     public Collection<OdontologoDTO> consultarTodos(){
         return odontologoService.consultarTodos();
     }
 
+    //Actualizar odontologos
     @PutMapping
     public ResponseEntity<?> actualizarOdontologo(@RequestBody OdontologoDTO odontologoDTO) {
 
@@ -55,6 +54,7 @@ public class OdontologoController {
         }
     }
 
+    //Eliminar odontologo por ID
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarOdontologo(@PathVariable Long id) {
 

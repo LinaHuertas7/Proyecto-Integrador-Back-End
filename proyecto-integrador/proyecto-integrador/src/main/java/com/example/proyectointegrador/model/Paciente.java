@@ -12,6 +12,8 @@ import java.util.Set;
 @Table(name = "pacientes")
 @Getter @Setter
 public class Paciente {
+
+    //Atributos
     @Id
     @GeneratedValue
     private Long id;
@@ -20,14 +22,17 @@ public class Paciente {
     private Integer dni;
     private Date fechaIngreso;
 
+    //Establecemos la relacion
     @OneToMany(mappedBy = "paciente")
-    @JsonIgnore
+    @JsonIgnore //sino entra en un ciclo infinito
     private Set<Turno> turnos;
 
+    //Establecemos la relacion
     @OneToOne
     @JoinColumn(name="domicilio_id")
     private Domicilio domicilio;
 
+    //Constructores
     public Paciente() {
     }
 

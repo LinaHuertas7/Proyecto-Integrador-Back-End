@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 @Service
 public class OdontologoService implements IOdontologoService {
 
+    //Agregar dependencia
     @Autowired
     IOdontologoRepository odontologoRepository;
 
@@ -24,6 +25,7 @@ public class OdontologoService implements IOdontologoService {
 
     final static Logger logger = Logger.getLogger(OdontologoService.class);
 
+    //Metodo para guardar odontologo
     @Override
     public void guardarOdontologo(OdontologoDTO odontologoDTO) {
         Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
@@ -31,6 +33,7 @@ public class OdontologoService implements IOdontologoService {
         logger.info("El odontologo se ha guardado correctamente");
     }
 
+    //Metodo para consultar odontologo por ID
     @Override
     public OdontologoDTO consultarOdontologo(Long id) {
         OdontologoDTO odontologoDTO = null;
@@ -43,6 +46,7 @@ public class OdontologoService implements IOdontologoService {
         return odontologoDTO;
     }
 
+    //Metodo para actualizar odontologo
     @Override
     public void actualizarOdontologo(OdontologoDTO odontologoDTO) {
         if (odontologoDTO.getId() != null) {
@@ -55,12 +59,14 @@ public class OdontologoService implements IOdontologoService {
 
     }
 
+    //Metodo para eliminar odontologo por ID
     @Override
     public void eliminarOdontologo(Long id) {
         odontologoRepository.deleteById(id);
         logger.info("El odontologo con id: " + id + " se ha eliminado correctamente.");
     }
 
+    //Metodo para consultar todos los odontologos
     @Override
     public Collection<OdontologoDTO> consultarTodos() {
         List<Odontologo> odontologos = odontologoRepository.findAll((Sort.by(Sort.Direction.DESC,"id")));

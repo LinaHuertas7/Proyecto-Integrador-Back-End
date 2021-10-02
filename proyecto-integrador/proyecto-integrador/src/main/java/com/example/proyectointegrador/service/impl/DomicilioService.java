@@ -15,6 +15,7 @@ import java.util.*;
 @Service
 public class DomicilioService implements IDomicilioService {
 
+    //Agregar dependencia
     @Autowired
     IDomicilioRepository domicilioRepository;
 
@@ -23,6 +24,8 @@ public class DomicilioService implements IDomicilioService {
 
     final static Logger logger = Logger.getLogger(DomicilioService.class);
 
+
+    //Metodo para guardar domicilio
     @Override
     public void guardarDomicilio(PacienteDTO pacienteDTO) {
         Domicilio domicilio = mapper.convertValue(pacienteDTO.getDomicilio(), Domicilio.class);
@@ -31,6 +34,7 @@ public class DomicilioService implements IDomicilioService {
         logger.info("El domicilio se ha guardado correctamente");
     }
 
+    //Metodo para consultar domicilio por ID
     @Override
     public DomicilioDTO consultarDomicilio(Long id) {
         DomicilioDTO domicilioDTO = null;
@@ -43,6 +47,7 @@ public class DomicilioService implements IDomicilioService {
         return domicilioDTO;
     }
 
+    //Metodo para actualizar domicilio
     @Override
     public void actualizarDomicilio(PacienteDTO pacienteDTO) {
         if(pacienteDTO.getId() != null) {
@@ -55,12 +60,14 @@ public class DomicilioService implements IDomicilioService {
         }
     }
 
+    //Metodo para eliminar domicilio por ID
     @Override
     public void eliminarDomicilio(Long id) {
         domicilioRepository.deleteById(id);
         logger.info("El domicilio con id: " + id + " se ha eliminado correctamente.");
     }
 
+    //Metodo para consultar todos los domicilios
     @Override
     public Collection<DomicilioDTO> consultarTodos() {
         List<Domicilio> domicilios = domicilioRepository.findAll();

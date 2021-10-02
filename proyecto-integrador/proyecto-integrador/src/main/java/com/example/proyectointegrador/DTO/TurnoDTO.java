@@ -11,6 +11,7 @@ import java.util.Date;
 @Getter
 public class TurnoDTO{
 
+    //Atributos
     private Long id;
     private Date fecha;
     private Paciente paciente;

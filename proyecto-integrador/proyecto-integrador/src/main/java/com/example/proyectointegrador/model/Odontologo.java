@@ -12,6 +12,7 @@ import java.util.Set;
 @Getter @Setter
 public class Odontologo {
 
+    //Atributos
     @Id
     @GeneratedValue
     private Long id;
@@ -19,11 +20,12 @@ public class Odontologo {
     private String apellido;
     private Integer matricula;
 
+    //Establecemos la relacion
     @OneToMany(mappedBy = "odontologo")
     @JsonIgnore //sino entra en un ciclo infinito
     private Set<Turno> turnos;
 
-
+    //Constructores
     public Odontologo() {
     }
 

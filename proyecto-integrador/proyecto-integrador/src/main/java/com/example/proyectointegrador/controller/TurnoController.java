@@ -13,15 +13,18 @@ import java.util.Collection;
 @RequestMapping("/turnos")
 public class TurnoController {
 
+    //Agregar la dependencia
     @Autowired
     TurnoService turnoService;
 
+    //Guardar Turno
     @PostMapping
     public ResponseEntity<?> guardarTurno(@RequestBody TurnoDTO turnoDTO) {
         turnoService.guardarTurno(turnoDTO);
         return ResponseEntity.status(HttpStatus.OK).body("Guardado Correctamente");
     }
 
+    //Consultar turno por ID
     @GetMapping("/{id}")
     public ResponseEntity<?> consultarTurno(@PathVariable Long id) {
         TurnoDTO turnoDTO = turnoService.consultarTurno(id);
@@ -33,17 +36,13 @@ public class TurnoController {
         }
     }
 
-
-    //@GetMapping
-    /*public ResponseEntity<List<Odontologo>> consultarTodos(){
-        return ResponseEntity.ok(odontologoService.buscarTodos());
-    }*/
-
+    //Consultar todos los turnos
     @GetMapping
     public Collection<TurnoDTO> consultarTodos(){
         return turnoService.consultarTodos();
     }
 
+    //Actualizar Turnos
     @PutMapping
     public ResponseEntity<?> actualizarTurnos(@RequestBody TurnoDTO turnoDTO) {
 
@@ -55,6 +54,7 @@ public class TurnoController {
         }
     }
 
+    //Elimitar Turno por ID
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarTurnos(@PathVariable Long id) {
 

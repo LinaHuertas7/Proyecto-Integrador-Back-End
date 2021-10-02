@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 public class Rol {
-
+    //Atributos
     @Id
     @GeneratedValue
     private Long id;

@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Getter @Setter
 public class Domicilio {
 
+    //Atributos
     @Id
     @GeneratedValue
     private Long id;
@@ -18,6 +19,7 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
+    //Constructores
     public Domicilio() {
     }
 
