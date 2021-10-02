@@ -1,4 +1,4 @@
-#Proyecto Integrador Back-End
+# Proyecto Integrador Back-End
 
 **Temas Trabajados**
 
@@ -15,6 +15,6 @@
 - Vistas 
 
 
-##Vista Clinica odontologica Proyecto integrador**
+## Vista Clinica odontologica Proyecto integrador
 
 ![Image](https://github.com/LinaHuertas7/Proyecto-Integrador-Back-End/blob/master/proyecto-integrador/proyecto-integrador/src/main/resources/static/img/vistaProyectoIntegrador.PNG)
